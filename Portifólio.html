@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Santos Ferreira — Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B0E14;
+    --bg-raised:#11151F;
+    --bg-inset:#080A10;
+    --line:#232838;
+    --text:#E8E6DE;
+    --text-dim:#8B93A7;
+    --text-faint:#565D71;
+    --amber:#E8A33D;
+    --amber-dim:#8A6323;
+    --cyan:#5FB8B0;
+    --cyan-dim:#356461;
+    --green:#7EC17A;
+    --coral:#D8724F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+
+  header{
+    border-bottom:1px solid var(--line);
+    padding:20px 0;
+    position:sticky; top:0;
+    background:rgba(11,14,20,0.92);
+    backdrop-filter:blur(6px);
+    z-index:10;
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .logo{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px; color:var(--amber); font-weight:500;
+  }
+  .logo span{color:var(--text-faint);}
+  nav{display:flex; gap:28px; font-family:'JetBrains Mono', monospace; font-size:13px;}
+  nav a{color:var(--text-dim); text-decoration:none; transition:color .15s;}
+  nav a:hover{color:var(--cyan);}
+
+  .hero{padding:72px 0 56px;}
+
+
+  @keyframes blink{50%{opacity:0;}}
+  .hero-headline{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:38px; font-weight:600;
+    margin:32px 0 10px;
+    letter-spacing:-0.5px;
+  }
+  .hero-sub{color:var(--text-dim); font-size:16px; max-width:520px;}
+  .hero-links{display:flex; gap:14px; margin-top:24px;}
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+    padding:10px 18px; border-radius:6px; text-decoration:none;
+    border:1px solid var(--line); color:var(--text);
+    transition:border-color .15s, color .15s;
+  }
+  .btn.primary{background:var(--amber); color:#1a1305; border-color:var(--amber); font-weight:500;}
+  .btn.primary:hover{background:#f0af4d;}
+  .btn:not(.primary):hover{border-color:var(--cyan); color:var(--cyan);}
+
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px; color:var(--amber);
+    margin-bottom:6px;
+  }
+  .sec-title{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:24px; font-weight:600; margin-bottom:28px;
+  }
+
+  .about-text{color:var(--text-dim); max-width:600px; font-size:15px;}
+  .about-text strong{color:var(--text); font-weight:500;}
+
+  .project{
+    background:var(--bg-raised);
+    border:1px solid var(--line);
+    border-radius:8px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .project-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .project-name{font-family:'Space Grotesk', sans-serif; font-size:16px; font-weight:600;}
+  .project-link{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--cyan); text-decoration:none;}
+  .project-body{padding:16px 20px 20px;}
+  .project-desc{color:var(--text-dim); font-size:14px; margin-bottom:14px;}
+  .diff-line{
+    font-family:'JetBrains Mono', monospace; font-size:12.5px;
+    padding:2px 0; color:var(--text-dim);
+  }
+  .diff-line.add{color:var(--green);}
+  .diff-line .plus{color:var(--green); margin-right:8px;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .tag{
+    font-family:'JetBrains Mono', monospace; font-size:11px;
+    padding:3px 9px; border-radius:4px;
+    background:var(--bg-inset); color:var(--cyan-dim);
+    border:1px solid var(--line);
+  }
+
+  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;}
+  .skill-group{background:var(--bg-raised); border:1px solid var(--line); border-radius:8px; padding:18px 20px;}
+  .skill-group h4{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--amber); margin-bottom:10px; font-weight:500;}
+  .skill-group p{font-size:14px; color:var(--text-dim);}
+
+  /* ---- footer ---- */
+  footer{padding:40px 0 56px; text-align:center;}
+  footer p{font-family:'JetBrains Mono', monospace; font-size:12px; color:var(--text-faint);}
+
+  @media(max-width:640px){
+    .hero-headline{font-size:28px;}
+    nav{gap:16px;}
+    .term-body{font-size:12.5px; padding:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">eduardo<span>.dev</span></div>
+    <nav>
+      <a href="#sobre">sobre</a>
+      <a href="#projetos">projetos</a>
+      <a href="#skills">competências</a>
+      <a href="#contato">contato</a>
+    </nav>
+  </div>
+</header>
+
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="sec-label">01</div>
+    <h2 class="sec-title">Sobre</h2>
+    <p class="about-text">
+      Sou estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> na FATEC SP e técnico em Informática pelo Senac SP.
+      Gosto de entender o problema por completo antes de escrever a primeira linha — do design da API até a última interação no front-end.
+      Atualmente estudando estruturas de dados em Python e aprofundando Node.js no back-end.
+    </p>
+  </div>
+</section>
+
+<section id="projetos">
+  <div class="wrap">
+    <div class="sec-label">02</div>
+    <h2 class="sec-title">Projetos</h2>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">API Ecommerce</span>
+        <a class="project-link" href="https://github.com/Eduardo301007/E-Commerce.git">Repositório no GitHub ↗</a>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">API REST para e-commerce com autenticação e persistência de dados.</p>
+        <div class="diff-line add"><span class="plus">+</span>autenticação JWT e criptografia de senhas com bcrypt</div>
+        <div class="diff-line add"><span class="plus">+</span>modelagem de dados com Mongoose sobre MongoDB</div>
+        <div class="diff-line add"><span class="plus">+</span>rotas de usuários, produtos, carrinho e pedidos</div>
+        <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">JWT</span></div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">Projetos Machine Learning</span>
+        <a class="project-link" href="https://github.com/Eduardo301007/Projeos-de-IA.git">Repositório no GitHub ↗</a>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Coleção de experimentos de aprendizado de máquina.</p>
+        <div class="diff-line add"><span class="plus">+</span>classificação de dados com Scikit-learn</div>
+        <div class="diff-line add"><span class="plus">+</span>tratamento e análise exploratória com Pandas</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Pandas</span></div>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-head">
+        <span class="project-name">Cadastro Escolar</span>
+        <a class="project-link" href="https://github.com/Eduardo301007/Cadastro-Escolar.git">Repositório no GitHub ↗</a>
+      </div>
+      <div class="project-body">
+        <p class="project-desc">Sistema de cadastro escolar e níveis de acesso com banco de dados</p>
+        <div class="diff-line add"><span class="plus">+</span>Banco de dados XAMPP e sistema em python</div>
+        <div class="diff-line add"><span class="plus">+</span>níveis de acessp de alunos, diretores e funcionários</div>
+        <div class="tags"><span class="tag">Python</span></div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">03</div>
+    <h2 class="sec-title">Competências técnicas</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>linguagens</h4>
+        <p>Python, JavaScript, C++</p>
+      </div>
+      <div class="skill-group">
+        <h4>back-end</h4>
+        <p>Node.js, Express, MongoDB, JWT</p>
+      </div>
+      <div class="skill-group">
+        <h4>front-end</h4>
+        <p>HTML5, CSS3, JavaScript</p>
+      </div>
+      <div class="skill-group">
+        <h4>ferramentas</h4>
+        <p>Git, GitHub</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="sec-label">04</div>
+    <h2 class="sec-title">Contato</h2>
+    <p class="about-text">Aberto a oportunidades de estágio em desenvolvimento full stack.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:edu.ferreira3010@gmail.com">edu.ferreira3010@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/eduardo-santos-183989340">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/Eduardo301007">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
